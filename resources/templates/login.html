@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Увійти - MOODua</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <a th:href="@{/}"><img src="images/logo.png" width="75" height="75" th:src="@{/images/logo.png}" alt="MOODua Logo"></a>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Головна</a></li>
+            <li><a th:href="@{/shop}">Магазин</a></li>
+            <li><a th:href="@{/portfolio}">Портфоліо</a></li>
+            <li><a th:href="@{/delivery}">Доставка та оплата</a></li>
+            <li><a th:href="@{/contact}">Контакти</a></li>
+            <li><a th:href="@{/blog}">Блог</a></li>
+            <!-- Add the contextual button here -->
+        </ul>
+    </nav>
+    <div class="header-right">
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <select>
+            <option value="ua">Українська</option>
+            <option value="en">English</option>
+            <option value="pl">Polski</option>
+        </select>
+        <input type="text" placeholder="Пошук...">
+        <a th:href="@{/login}" class="login-btn">Увійти</a>
+        <button class="cart-btn">Cart</button>
+    </div>
+</header>
+<main>
+    <!-- Add the content of the login page here -->
+    <section class="login">
+        <h2>Увійти</h2>
+        <form action="#" method="post">
+            <label for="username">Логін:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Увійти</button>
+        </form>
+    </section>
+</main>
+<footer>
+    <!-- Add footer content here -->
+</footer>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

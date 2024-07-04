@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Блог - MOODua</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <a th:href="@{/}"><img src="images/logo.png" width="75" height="75" th:src="@{/images/logo.png}" alt="MOODua Logo"></a>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Головна</a></li>
+            <li><a th:href="@{/shop}">Магазин</a></li>
+            <li><a th:href="@{/portfolio}">Портфоліо</a></li>
+            <li><a th:href="@{/delivery}">Доставка та оплата</a></li>
+            <li><a th:href="@{/contact}">Контакти</a></li>
+            <li><a th:href="@{/blog}">Блог</a></li>
+            <!-- Add the contextual button here -->
+        </ul>
+    </nav>
+    <div class="header-right">
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <select>
+            <option value="ua">Українська</option>
+            <option value="en">English</option>
+            <option value="pl">Polski</option>
+        </select>
+        <input type="text" placeholder="Пошук...">
+        <a th:href="@{/login}" class="login-btn">Увійти</a>
+        <button class="cart-btn">Cart</button>
+    </div>
+</header>
+<main>
+    <!-- Add the content of the blog page here -->
+    <section class="blog">
+        <h2>Блог</h2>
+        <div class="blog-posts">
+            <!-- Add blog posts here -->
+        </div>
+    </section>
+</main>
+<footer>
+    <!-- Add footer content here -->
+</footer>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="title">MOODpl - Prezenty Korporacyjne</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="header-wrapper">
+    <header>
+        <div class="header-main">
+            <div class="search-container">
+                <input type="text" placeholder="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 5 14 14" fill="#FFFFFF" class="magnifying-glass">
+                    <path d="m15.683 14.6 3.265 3.265a.2.2 0 0 1 0 .282l-.8.801a.2.2 0 0 1-.283 0l-3.266-3.265a5.961 5.961 0 1 1 1.084-1.084zm-4.727 1.233a4.877 4.877 0 1 0 0-9.754 4.877 4.877 0 0 0 0 9.754z"></path>
+                </svg>
+            </div>
+            <div class="social-language">
+                <a href="https://www.instagram.com/mood_in_ukraine" target="_blank">
+                    <img src="images/socials/inst.png" class="inst-ico" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/company/moodua" target="_blank">
+                    <img src="images/socials/linkedIn.png" class="linkedin-ico" alt="LinkedIn">
+                </a>
+                <div class="language-select-container">
+                    <div class="language-select" tabindex="0">
+                        <span id="selected-language">PL</span>
+                        <div class="dropdown-arrow"></div>
+                    </div>
+                    <ul class="language-dropdown">
+                        <li data-lang="en">EN</li>
+                        <li data-lang="pl">PL</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo-name-container">
+                <a th:href="@{/}" class="logo-name-link">
+                    <img src="images/logo.png" width="70" height="70" th:src="@{/images/logo.png}" alt="MOODua Logo">
+                    <span class="company-name">
+                        <span style="color: #3BB9BE;">M</span>
+                        <span style="color: #FFA6AD;">O</span>
+                        <span style="color: #FFF0A4;">O</span>
+                        <span style="color: #FFD6CC;">D</span>
+                        <span style="color: #3BB9BE;">p</span>
+                        <span style="color: #FFF0A4;">l</span>
+                    </span>
+                </a>
+            </div>
+            <div class="button-container">
+                <nav>
+                    <ul>
+                        <li><a href="/" class="btn-home" data-translate-key="btn-home">Strona główna</a></li>
+                        <li><a href="/shop" class="btn-shop" data-translate-key="btn-shop">Sklep</a></li>
+                        <li><a href="/portfolio" class="btn-portfolio" data-translate-key="btn-portfolio">Portfolio</a></li>
+                        <li><a href="/delivery" class="btn-delivery" data-translate-key="btn-delivery">Dostawa i płatność</a></li>
+                        <li><a href="/contact" class="btn-contact" data-translate-key="btn-contact">Kontakt</a></li>
+                        <li><a href="/blog" class="btn-blog" data-translate-key="btn-blog">Blog</a></li>
+                        <li class="dropdown">
+                            <a class="dropbtn">...</a>
+                            <div class="dropdown-content">
+                                <a href="/faq" data-translate-key="faq">FAQ</a>
+                                <a href="/about" data-translate-key="about">O nas</a>
+                                <a href="/personal-data" data-translate-key="personal-data">Zgoda na przetwarzanie danych osobowych</a>
+                                <a href="/confidentiality-policy" data-translate-key="confidentiality-policy">Polityka prywatności</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="auth-cart-container">
+                <a href="/login" class="login-btn">
+                    <svg class="login-icon" data-bbox="0 0 50 50" data-type="shape" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 50 50">
+                        <g>
+                            <path d="M25 48.077c-5.924 0-11.31-2.252-15.396-5.921 2.254-5.362 7.492-8.267 15.373-8.267 7.889 0 13.139 3.044 15.408 8.418-4.084 3.659-9.471 5.77-15.385 5.77m.278-35.3c4.927 0 8.611 3.812 8.611 8.878 0 5.21-3.875 9.456-8.611 9.456s-8.611-4.246-8.611-9.456c0-5.066 3.684-8.878 8.611-8.878M25 0C11.193 0 0 11.193 0 25c0 .915.056 1.816.152 2.705.032.295.091.581.133.873.085.589.173 1.176.298 1.751.073.338.169.665.256.997.135.515.273 1.027.439 1.529.114.342.243.675.37 1.01.18.476.369.945.577 1.406.149.331.308.657.472.98.225.446.463.883.714 1.313.182.312.365.619.56.922.272.423.56.832.856 1.237.207.284.41.568.629.841.325.408.671.796 1.02 1.182.22.244.432.494.662.728.405.415.833.801 1.265 1.186.173.154.329.325.507.475l.004-.011A24.886 24.886 0 0 0 25 50a24.881 24.881 0 0 0 16.069-5.861.126.126 0 0 1 .003.01c.172-.144.324-.309.49-.458.442-.392.88-.787 1.293-1.209.228-.232.437-.479.655-.72.352-.389.701-.78 1.028-1.191.218-.272.421-.556.627-.838.297-.405.587-.816.859-1.24a26.104 26.104 0 0 0 1.748-3.216c.208-.461.398-.93.579-1.406.127-.336.256-.669.369-1.012.167-.502.305-1.014.44-1.53.087-.332.183-.659.256-.996.126-.576.214-1.164.299-1.754.042-.292.101-.577.133-.872.095-.89.152-1.791.152-2.707C50 11.193 38.807 0 25 0"></path>
+                        </g>
+                    </svg>
+                    <span data-translate-key="login-btn">Zaloguj się</span>
+                </a>
+                <button class="cart-btn">
+                    <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" width="20" height="20" viewBox="5.7 0 105.5 126.1" preserveAspectRatio="xMinYMax meet" data-hook="svg-icon-1">
+                        <path d="M99.8 28.4c0-1.2-0.9-2-2.1-2h-15c0 3.2 0 7.6 0 8.2 0 1.5-1.2 2.6-2.6 2.9 -1.5 0.3-2.9-0.9-3.2-2.3 0-0.3 0-0.3 0-0.6 0-0.9 0-4.7 0-8.2H40.1c0 3.2 0 7.3 0 8.2 0 1.5-1.2 2.9-2.6 2.9 -1.5 0-2.9-0.9-3.2-2.3 0-0.3 0-0.3 0-0.6 0-0.6 0-5 0-8.2h-15c-1.2 0-2 0.9-2 2L8.3 124c0 1.2 0.9 2.1 2.1 2.1h96.3c1.2 0 2.1-0.9 2.1-2.1L99.8 28.4z"></path>
+                        <path d="M59.1 5.9c-2.9 0-2 0-2.9 0 -2 0-4.4 0.6-6.4 1.5 -3.2 1.5-5.9 4.1-7.6 7.3 -0.9 1.8-1.5 3.5-1.8 5.6 0 0.9-0.3 1.5-0.3 2.3 0 1.2 0 2.1 0 3.2 0 1.5-1.2 2.9-2.6 2.9 -1.5 0-2.9-0.9-3.2-2.3 0-0.3 0-0.3 0-0.6 0-1.2 0-2.3 0-3.5 0-3.2 0.9-6.4 2-9.4 1.2-2.3 2.6-4.7 4.7-6.4 3.2-2.9 6.7-5 11.1-5.9C53.5 0.3 55 0 56.7 0c1.5 0 2.9 0 4.4 0 2.9 0 5.6 0.6 7.9 1.8 2.6 1.2 5 2.6 6.7 4.4 3.2 3.2 5.3 6.7 6.4 11.1 0.3 1.5 0.6 3.2 0.6 4.7 0 1.2 0 2.3 0 3.2 0 1.5-1.2 2.6-2.6 2.9s-2.9-0.9-3.2-2.3c0-0.3 0-0.3 0-0.6 0-1.2 0-2.6 0-3.8 0-2.3-0.6-4.4-1.8-6.4 -1.5-3.2-4.1-5.9-7.3-7.3 -1.8-0.9-3.5-1.8-5.9-1.8C61.1 5.9 59.1 5.9 59.1 5.9L59.1 5.9z"></path>
+                        <text x="58.5" y="77" dy=".35em" text-anchor="middle" class="uxskpx" data-hook="items-count">0</text>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+</div>
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/hero/bottle-left.png" class="hero-image bottle-left" alt="Yellow Bottle">
+            <div class="hero-icons-container">
+                <div class="hero-icons">
+                    <h1 data-translate-key="hero h1">Upominki firmowe dla <span style="color: #FFA6AD;">najlepszego zespołu</span></h1>
+                    <div class="icon-top">
+                        <img src="images/hero/all-in-one.png" alt="All in one">
+                        <p class="text-top"><strong data-translate-key="text-top">Jeden kontrahent</strong></p>
+                        <p class="text-top-1" data-translate-key="text-top-1">dla wszystkich zamówień</p>
+                    </div>
+                    <div class="icon-middle">
+                        <img src="images/hero/flag.png" alt="Flag">
+                        <p class="text-middle" data-translate-key="text-middle">Produkcja <strong>na terenie Ukrainy</strong> </p>
+                        <p class="text-middle-1" data-translate-key="text-middle-1"><strong>i Polski</strong></p>
+                    </div>
+                    <div class="icon-bottom">
+                        <img src="images/hero/delivery.png" alt="Delivery">
+                        <p class="text-bottom"><strong data-translate-key="text-bottom">Dostawa na całym świecie</strong></p>
+                        <p class="text-bottom-1" data-translate-key="text-bottom-1">i kompleksowa kontrola na każdym</p>
+                        <p class="text-bottom-2" data-translate-key="text-bottom-2">z etapów</p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://moodua.typeform.com/moodua" class="hero-button" data-translate-key="leave-application"></a>
+            <img src="images/hero/hoodie.png" class="hero-image hoodie" alt="Hoodie">
+            <img src="images/hero/small-gift.png" class="hero-image small-gift" alt="Small Gift">
+            <img src="images/hero/white-bottle.png" class="hero-image white-bottle" alt="White Bottle">
+            <img src="images/hero/headphones.png" class="hero-image headphones" alt="Headphones">
+            <img src="images/hero/dotted-line.png" class="hero-image dotted-line" alt="Dotted Line">
+        </div>
+    </section>
+
+    <section class="ideas">
+        <div class="ideas-strip">
+            <h2 data-translate-key="ideas-title">Aktualne pomysły</h2>
+        </div>
+        <div class="ideas-grid">
+            <a href="#" class="idea-item">
+                <div class="idea-container merch">
+                    <img src="images/ideas/merch_hoodie.png" alt="Merch Hoodie" class="merch-hoodie">
+                    <img src="images/ideas/merch_bag.png" alt="Merch Bag" class="merch-bag">
+                    <p class="idea-text-1" data-translate-key="idea-text-1">Merch</p>
+                </div>
+            </a>
+            <a href="#" class="idea-item">
+                <div class="idea-container welcome-pack">
+                    <img src="images/ideas/welcome-pack.png" alt="Welcome Pack" class="bottle-idea">
+                    <p class="idea-text-2" data-translate-key="idea-text-2">Welcome Pack</p>
+                </div>
+            </a>
+            <a href="#" class="idea-item">
+                <div class="idea-container get-well-boxes">
+                    <img src="images/ideas/get-well-boxes.png" alt="Get Well Boxes" class="mask-idea">
+                    <p class="idea-text-3" data-translate-key="idea-text-3">Get Well Boxes</p>
+                </div>
+            </a>
+            <a href="#" class="idea-item">
+                <div class="idea-container food-mood">
+                    <img src="images/ideas/food-mood.png" alt="Food Mood" class="cake-idea">
+                    <p class="idea-text-4" data-translate-key="idea-text-4">Food Mood</p>
+                </div>
+            </a>
+            <a href="#" class="idea-item">
+                <div class="idea-container bags">
+                    <img src="images/ideas/bags.png" alt="Bags" class="bag-idea">
+                    <p class="idea-text-5" data-translate-key="idea-text-5">Bags</p>
+                </div>
+            </a>
+            <a href="#" class="idea-item">
+                <div class="idea-container birthday-boxes">
+                    <img src="images/ideas/birthday-boxes.png" alt="Birthday Boxes" class="box-idea">
+                    <p class="idea-text-6" data-translate-key="idea-text-6">Birthday Boxes</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="trust">
+        <h2 data-translate-key="trust-title">Najlepsze Firmy <strong>Nam Zaufają</strong></h2>
+        <div class="carousel-container">
+            <div class="logos">
+                <div class="logos-slide">
+                    <img src="images/up/royalcanin.png" alt="Royal Canin">
+                    <img src="images/up/hp.png" alt="HP">
+                    <img src="images/up/bolt.png" alt="Bolt">
+                    <img src="images/up/ciklum.png" alt="Ciklum">
+                    <img src="images/up/sisense.png" alt="Sisense">
+                    <img src="images/up/harwind.png" alt="Harwind">
+                    <img src="images/up/jooble.png" alt="Jooble">
+                    <img src="images/up/rbi.png" alt="RBI">
+                    <img src="images/up/readdle.png" alt="Readdle">
+                </div>
+            </div>
+        </div>
+        <button class="view-cases-btn" data-translate-key="view-cases-btn">Zobacz przypadki</button>
+    </section>
+
+    <section class="about">
+        <h2 data-translate-key="about-title"><strong>MOODua</strong> is <span class="highlight">like Google</span> <br />in the world of gifts</h2>
+        <div class="about-content">
+            <div class="about-box left-box">
+                <p class="about-text" data-translate-key="about-text-1"><strong>We will suggest the best ideas</strong><br>for any occasion.</p>
+            </div>
+            <div class="about-box right-box">
+                <p class="about-text" data-translate-key="about-text-2"><strong>We brand everything</strong><br>We will put any logo or print <br>on all goods.</p>
+            </div>
+            <div class="about-box bottom-box">
+                <p class="about-text" data-translate-key="about-text-3"><strong>Large assortment</strong><br>We will find anything you can't.</p>
+            </div>
+            <div class="phone-image">
+                <img src="images/about/phone-image.png" alt="Phone Image">
+            </div>
+            <div class="dotted-line-about">
+                <img src="images/about/dotted-line-about.png" alt="Dotted Line in About Section">
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2 data-translate-key="how h2">Jak to działa?</h2>
+        <div class="steps-container">
+            <div class="line-bck">
+                <img src="images/how-it-works/line-bck.png" alt="Background Line" class="line-bck-1">
+            </div>
+            <div class="step">
+                <h1 class="number-1">1</h1>
+                <h3 class="step-title-1" data-translate-key="step-title-1">Wybierz</h3>
+                <p class="step-text-1" data-translate-key="step-text-1">Nasze aktualne <br>oferty + <br>duży asortyment <br>na stronie.</p>
+            </div>
+            <div class="step">
+                <h1 class="number-2">2</h1>
+                <h3 class="step-title-2" data-translate-key="step-title-2">Dotknij</h3>
+                <p class="step-text-2" data-translate-key="step-text-2">Wyślemy Ci <br>przykładowe produkty, <br>abyś mógł być <br>pewien ich jakości.</p>
+            </div>
+            <div class="step">
+                <h1 class="number-3">3</h1>
+                <h3 class="step-title-3" data-translate-key="step-title-3">Zobacz</h3>
+                <p class="step-text-3" data-translate-key="step-text-3">Przed rozpoczęciem <br>produkcji <br>uzgodnimy z Tobą <br>wizualizację upominku.</p>
+            </div>
+            <div class="step">
+                <h1 class="number-4">4</h1>
+                <h3 class="step-title-4" data-translate-key="step-title-4">Zamówienie</h3>
+                <p class="step-text-4" data-translate-key="step-text-4">Podpisujemy <br>umowę i <br>omawiamy kwestię <br>przedpłaty.</p>
+            </div>
+            <div class="step">
+                <h1 class="number-5">5</h1>
+                <h3 class="step-title-5" data-translate-key="step-title-5">Odbiór</h3>
+                <p class="step-text-5" data-translate-key="step-text-5">My dostarczamy - <br>Ty otrzymujesz <br>zachwycone reakcje.</p>
+            </div>
+            <div class="dotted-line-white">
+                <img src="images/how-it-works/dotted-line-white.png" alt="White Dotted Line" class="dotted-line-white-1">
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <h2>Наші роботи</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="images/portfolio/1.png" th:src="@{/images/portfolio/1.png}" alt="Project 1">
+            </div>
+            <div class="portfolio-item">
+                <img src="images/portfolio/2.png" th:src="@{/images/portfolio/2.png}" alt="Project 2">
+            </div>
+            <div class="portfolio-item">
+                <img src="images/portfolio/3.png" th:src="@{/images/portfolio/3.png}" alt="Project 3">
+            </div>
+            <div class="portfolio-item">
+                <img src="images/portfolio/4.png" th:src="@{/images/portfolio/4.png}" alt="Project 4">
+            </div>
+            <!-- Add more portfolio items as needed -->
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Про нас</h3>
+            <p>MOODua - ваш надійний партнер у світі корпоративних подарунків.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Корисні посилання</h3>
+            <ul>
+                <li><a th:href="@{/privacy}">Політика конфіденційності</a></li>
+                <li><a th:href="@{/terms}">Умови використання</a></li>
+                <li><a th:href="@{/faq}">Часті запитання</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h2>Контакти</h2>
+            <p>Email: contact@moodua.com</p>
+            <p>Телефон: +380 123 456 789</p>
+            <p>Адреса: вул. Подарункова, 12, Київ, Україна</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 MOODua. Всі права захищені.</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="/js/main.js" th:href="@{/js/main.js}"></script>
+</body>
+</html>
